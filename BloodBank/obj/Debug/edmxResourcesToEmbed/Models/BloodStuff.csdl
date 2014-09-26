@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BloodBankModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BloodBankEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BloodBanks2" EntityType="BloodBankModel.BloodBanks2" />
+    <EntitySet Name="Donors2" EntityType="BloodBankModel.Donors2" />
+    <EntitySet Name="Patients2" EntityType="BloodBankModel.Patients2" />
+  </EntityContainer>
+  <EntityType Name="BloodBanks2">
+    <Key>
+      <PropertyRef Name="BloodBankID" />
+    </Key>
+    <Property Name="BloodBankID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BloodBankName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BloodBankAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="BloodBankContactNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Donors2">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DonorName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DonorBloodGroup" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DonorMedicalreport" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DonorAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DonorContactInfo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Patients2">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PatientBloodGroup" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PatientDisease" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,46 @@
+﻿@model BloodBank.Models.Donors2
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Donors</h2>
+<form action="@Url.Action("Edit", "Donors")" method="post">
+    @*add a hidden field to hold the ID*@
+    <br />
+    <span>
+    @Html.HiddenFor(x => x.DonorID)
+    </span>
+        <div>
+        @*create lable, text box, and the validation for each proprety*@
+        @Html.LabelFor(x => x.DonorName)
+        @Html.TextBoxFor(x => x.DonorName)
+        @Html.ValidationMessageFor(x => x.DonorName)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.DonorContactInfo)
+        @Html.TextBoxFor(x => x.DonorContactInfo)
+        @Html.ValidationMessageFor(x => x.DonorContactInfo)
+    </div>
+      <div>
+        @Html.LabelFor(x => x.DonorAddress)
+        @Html.TextAreaFor(x => x.DonorAddress)
+        @Html.ValidationMessageFor(x => x.DonorAddress)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.DonorBloodGroup)
+        @Html.TextAreaFor(x => x.DonorBloodGroup)
+        @Html.ValidationMessageFor(x => x.DonorBloodGroup)
+    </div>
+     <div>
+        @Html.LabelFor(x => x.DonorMedicalreport)
+        @Html.TextAreaFor(x => x.DonorMedicalreport)
+        @Html.ValidationMessageFor(x => x.DonorMedicalreport)
+    </div>
+
+    <input type="submit" value="Click Me Homes!" />
+</form>
+@*ADD a reference to jQuery Validation*@
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }
